@@ -3,13 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Rich8704/food_ordering_app.git'
-            }
-        }
-
-        stage('Build') {
+            stage('Build') {
             steps {
                 sh 'mvn clean package'
             }
