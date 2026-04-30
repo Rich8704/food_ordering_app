@@ -2,21 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('Build App') {
             steps {
-                sh 'echo Building...'
+                sh 'echo Building application...'
+                sh 'mvn clean package'
             }
         }
 
-        stage('Docker Build') {
+        stage('Build Docker Image') {
             steps {
-                sh 'echo Docker build...'
+                sh 'echo Building Docker image...'
+                sh 'docker build -t food-app .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'echo Running container...'
+                sh 'echo Running Docker container...'
+                sh 'docker run -d -p 8081:80 food-app'
             }
         }
     }
