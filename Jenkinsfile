@@ -3,24 +3,22 @@ pipeline {
 
     stages {
 
-        stage('Build App') {
+        stage('Build') {
             steps {
-                sh 'echo Building application...'
                 sh 'mvn clean package'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Docker Build') {
             steps {
-                sh 'echo Building Docker image...'
                 sh 'docker build -t food-app .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'echo Running Docker container...'
-                sh 'docker run -d -p 8081:80 food-app'
+                sh 'docker rm -f food-container || true'
+                sh 'docker run -d -p 8081:80 --name food-container food-app'
             }
         }
     }
