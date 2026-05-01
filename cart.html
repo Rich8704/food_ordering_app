@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order - A J Food Hub</title>
+  <link rel="stylesheet" href="style_cart.css" />
+  <link rel="icon" href="D:\New folder\Bun Boy\bun boy logo.png" type="image\png">
+</head>
+<body>
+  <header>
+    <h1>A J Food Hub</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="order.html"><button>Order Now</button></a>
+    </nav>
+  </header>
+  <br>
+
+  <h1>Our Specials</h1>
+<section>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Malai Bun
+                <span> Rs. 30 
+                    <td align="right">
+                        <button onclick="addToCart('Malai Bun', 30)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Paalkova Bun
+                <span> Rs. 30 
+                    <td align="right">
+                        <button onclick="addToCart('Paalkova Bun', 30)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Gulab Jamun Bun
+                <span> Rs. 35 
+                    <td align="right">
+                        <button onclick="addToCart('Gulab Jamun Bun', 35)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Gulgandh Bun
+                <span> Rs. 30 
+                    <td align="right">
+                        <button onclick="addToCart('Gulgandh Bun', 30)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Honey Bun
+                <span> Rs. 30
+                    <td align="right">
+                        <button onclick="addToCart('Honey Bun', 30)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Butter Bun
+                <span> Rs.25
+                    <td align="right">
+                        <button onclick="addToCart('Butter Bun', 25)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Bun Butter Jam
+                <span> Rs. 20
+                    <td align="right">
+                        <button onclick="addToCart(Bun Butter Jam', 20)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Gulab Jamun Bun
+                <span> Rs. 35 
+                    <td align="right">
+                        <button onclick="addToCart('Gulab Jamun Bun', 35)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>White Chocolate Bun
+                <span> Rs. 35 
+                    <td align="right">
+                        <button onclick="addToCart('White Chocolate Bun', 35)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+  <div class="product">
+    <table width="100%">
+        <tr>
+            <h3>Dark Chocolate Bun
+                <span> Rs. 30
+                    <td align="right">
+                        <button onclick="addToCart('Dark Chocolate Bun', 30)">Add to Cart</button>
+                    </td>
+                </span>
+            </h3>
+        </tr>
+    </table>
+  </div>
+</section>  
+<section
+  <div class="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+</section>
+  <script src="cart.js"></script> 
+</body>
+</html>
