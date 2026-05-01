@@ -1,0 +1,57 @@
+STEP 1 — Launch EC2 Instance
+
+Update Ubuntu
+sudo apt update && sudo apt upgrade -y
+
+Install Java
+sudo apt install openjdk-17-jdk -y
+java -version
+
+Go to Home Directory
+cd ~
+
+Download Jenkins 2.50+
+wget https://get.jenkins.io/debian-stable/jenkins_2.504.1_all.deb
+
+Install Jenkins
+sudo dpkg -i jenkins_2.504.1_all.deb
+
+Fix Dependencies
+sudo apt --fix-broken install -y
+
+Start Jenkins
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
+
+Docker Installation Steps
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker Jenkins
+sudo usermod -aG docker ubuntu
+sudo systemctl restart docker
+sudo systemctl restart Jenkins
+docker --version
+newgrp docker
+docker ps
+
+Maven Installation steps
+
+sudo apt update
+sudo apt install maven -y
+mvn -version
+
+increase swap space and tmp space
+
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
+free -h
+
+sudo mount -o remount,size=800M /tmp
+df -h /tmp
+sudo systemctl restart jenkins
