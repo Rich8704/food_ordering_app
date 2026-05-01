@@ -11,7 +11,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t food-app .'
+                sh 'docker build --no-cache -t food-app .'
             }
         }
 
